@@ -9,7 +9,7 @@ function App() {
   const [schedule, setSchedule] = useState([]);
 
   const calculateEMI = async () => {
-    const res = await axios.post("http://127.0.0.1:5000/loan/calculate", {
+    const res = await axios.post("https://emi-calculator-g26o.onrender.com", {
       amount,
       rate,
       tenure,
