@@ -11,7 +11,7 @@ function App() {
 const calculateEMI = async () => {
 try {
 const res = await axios.post(
-"https://dashboard.render.com/web/srv-d8cpjo1kh4rs73c2n5vg/loan/calculate",
+"https://emi-calculator-g26o.onrender.com/loan/calculate",
 {
 amount,
 rate,
