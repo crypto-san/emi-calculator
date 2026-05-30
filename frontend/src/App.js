@@ -8,16 +8,31 @@ function App() {
   const [emi, setEmi] = useState(null);
   const [schedule, setSchedule] = useState([]);
 
-  const calculateEMI = async () => {
-    const res = await axios.post("https://dashboard.render.com/web/srv-d8cpjo1kh4rs73c2n5vg", {
-      amount,
-      rate,
-      tenure,
-    });
+const calculateEMI = async () => {
+try {
+const res = await axios.post(
+"https://dashboard.render.com/web/srv-d8cpjo1kh4rs73c2n5vg/loan/calculate",
+{
+amount,
+rate,
+tenure,
+}
+);
 
-    setEmi(res.data.emi);
-    setSchedule(res.data.schedule);
-  };
+```
+console.log(res.data);
+
+setEmi(res.data.emi);
+setSchedule(res.data.schedule);
+```
+
+} catch (error) {
+console.log(error);
+alert("Backend connection failed");
+}
+};
+
+
 
   return (
     <div style={{ textAlign: "center" }}>
